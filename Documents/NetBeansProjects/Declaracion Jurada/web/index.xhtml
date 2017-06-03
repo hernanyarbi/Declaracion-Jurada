@@ -24,9 +24,9 @@
                                      update=":msg
                                      :frmLogin"/>
                     <p:commandLink value="Registrarse"
-                                     style="margin-left: 60%"
-                                     onclick="PF('dlg').show();"
-                                     />
+                                   style="margin-left: 60%"
+                                   onclick="PF('dlg').show();"
+                                   />
                 </h:panelGrid>
             </h:form>
             <h:form id="register">
@@ -35,33 +35,36 @@
                           style="height: 900px"
                           header="Nuevo Usuario">
                     <h:panelGrid columns="1">
-                        <p:panel id="personal">
-                            <h:panelGrid columns="2">
-                                <p:outputLabel value="Nombres"/>
-                                <p:inputText value="#{loginFormBean.userBean.user.name}"
-                                             required="true"/>
-                                <p:outputLabel value="Apellidos"/>
-                                <p:inputText value="#{loginFormBean.userBean.user.lastname}"
-                                             required="true"/>
-                                <p:outputLabel value="Sexo"/>
-                                <p:selectOneMenu>
-                                    <f:selectItem itemLabel="Femenino"
-                                                  itemValue="Femenino"/>
-                                    <f:selectItem/>
-                                </p:selectOneMenu>
-                                <p:outputLabel value="Telefono"/>
-                                <p:inputText value="#{loginFormBean.userBean.user.tel}"/>
-                            </h:panelGrid>
-                        </p:panel>
+                        <p:outputLabel value="Nombre De Usuario Y Contraseña"/>
                         <p:panel id="user"
                                  style="margin-top:  0%">
                             <h:panelGrid columns="2">
                                 <p:outputLabel value="Username"/>
-                                <p:inputText value="#{loginFormBean.userBean.user.username}"
+                                <p:inputText value="#{registerFormBean.registerBean.user.name}"
                                              required="true"/>
                                 <p:outputLabel value="Password"/>
-                                <p:password value="#{loginFormBean.userBean.user.password}"
+                                <p:password value="#{registerFormBean.registerBean.user.name}"
                                             required="true"/>
+                            </h:panelGrid>
+                        </p:panel>
+                        <p:outputLabel value="Datos Personales "/>
+                        <p:panel id="personal">
+                            <h:panelGrid columns="2">
+                                <p:outputLabel value="Nombres"/>
+                                <p:inputText value="#{registerFormBean.registerBean.user.name}"
+                                             required="true"/>
+                                <p:outputLabel value="Apellidos"/>
+                                <p:inputText value="#{registerFormBean.registerBean.user.lastname}"
+                                             required="true"/>
+                                <p:outputLabel value="Sexo"/>
+                                <p:selectOneMenu value="#{registerFormBean.registerBean.user.sex}">
+                                    <f:selectItem itemLabel="Femenino"
+                                                  itemValue="true"/>
+                                    <f:selectItem itemLabel="Masculino" 
+                                                  itemValue="false"/>
+                                </p:selectOneMenu>
+                                <p:outputLabel value="Telefono"/>
+                                <p:inputText value="#{registerFormBean.registerBean.user.tel}"/>
                             </h:panelGrid>
                         </p:panel>
                     </h:panelGrid>

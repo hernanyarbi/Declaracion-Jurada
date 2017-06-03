@@ -6,48 +6,30 @@
 package aplicacion.beans.forms;
 
 import aplicacion.beans.LoginBean;
-import aplicacion.modelo.dominio.User;
-import aplicacion.modelo.source.UserDataSource;
-import javax.faces.application.FacesMessage;
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.context.FacesContext;
 
 /**
  *
- * @author hernan-PC
+ * @author Trabajo Y Estudio
  */
 @ManagedBean
 @RequestScoped
-public class LoginFormBean {
+public class LoginFormBean implements Serializable{
 
-    @ManagedProperty(value=("#{userBean}"))
-    private LoginBean userBean;
+    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean loginBean;
     private String username;
     private String pass;
     public LoginFormBean() {
-    
     }
+
     public String searchUser(){
-        System.out.println("FormBean");
-        return userBean.searchUser(username, pass);
-    }
-
-    /**
-     * @return the userBean
-     */
-    public LoginBean getUserBean() {
-        return userBean;
-    }
-
-    /**
-     * @param userBean the userBean to set
-     */
-    public void setUserBean(LoginBean userBean) {
-        this.userBean = userBean;
-    }
-
+        return loginBean.searchUser(username, pass);
+    }   
+    
     /**
      * @return the username
      */
@@ -74,6 +56,20 @@ public class LoginFormBean {
      */
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    /**
+     * @return the loginBean
+     */
+    public LoginBean getLoginBean() {
+        return loginBean;
+    }
+
+    /**
+     * @param loginBean the loginBean to set
+     */
+    public void setLoginBean(LoginBean loginBean) {
+        this.loginBean = loginBean;
     }
     
 }

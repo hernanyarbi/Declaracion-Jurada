@@ -10,14 +10,14 @@ import aplicacion.dap.UserDAO;
 import aplicacion.modelo.dominio.User;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Trabajo Y Estudio
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class RegisterBean {
 
     private User user;

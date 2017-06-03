@@ -32,7 +32,6 @@ public class LoginBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        user = new User();
         userDao = new UserDAOImp();
     }
 

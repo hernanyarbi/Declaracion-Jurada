@@ -5,10 +5,22 @@
  */
 package aplicacion.validaciones;
 
+import aplicacion.modelo.dominio.User;
+import java.io.Serializable;
+
 /**
  *
  * @author Trabajo Y Estudio
  */
-public class ValidacionLogin {
+public class ValidacionLogin implements Serializable{
+    
+    
+    
+    public static boolean validate(User user){
+        
+        
+        
+        return false;
+    }
     
 }

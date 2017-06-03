@@ -20,23 +20,30 @@ public class UserDataSource implements Serializable {
 
     public static void add(User user) {
         if (users == null) {
+            System.out.println("Nuevo usuario");
             users = new ArrayList<>();
         }
+        System.out.println("nuevo usuario" + user);
         users.add(user);
+        System.out.println("usuario agregado");
     }
 
     public static User searchUser(String username, String pass) {
         User user = null;
-        users.add(new User("ejemplo1", "123456", "Ejemplo1", "Ejemplo.1", false, 0, 0));
-        users.add(new User("ejemplo2", "123789", "Ejemplo2", "Ejemplo.2", true, 0, 0));
-        users.add(new User("ejemplo3", "456789", "Ejemplo3", "Ejemplo.3", false, 0, 0));
         System.out.println(users);
-        for (User user1 : users) {
-            if (user1.getUsername().equals(username) && user1.getPassword().equals(pass)) {
-                user = user1;
-                break;
-            }
+        if (users != null) {
+            users.add(new User("ejemplo1", "123456", "Ejemplo1", "Ejemplo.1", "Femenino", 0, 0));
+            users.add(new User("ejemplo2", "123789", "Ejemplo2", "Ejemplo.2", "Femenino", 0, 0));
+            users.add(new User("ejemplo3", "456789", "Ejemplo3", "Ejemplo.3", "Masculino", 0, 0));
+            System.out.println(username + pass);
+            for (User user1 : users) {
+                System.out.println("dentro de if de buscar usuario "+ user1.getUsername());
+                if (user1.getUsername().equals(username) && user1.getPassword().equals(pass)) {
+                    user = user1;
+                    break;
+                }
 
+            }
         }
         return user;
     }

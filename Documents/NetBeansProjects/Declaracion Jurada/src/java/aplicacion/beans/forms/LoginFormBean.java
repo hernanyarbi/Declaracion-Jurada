@@ -9,24 +9,26 @@ import aplicacion.beans.LoginBean;
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Trabajo Y Estudio
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class LoginFormBean implements Serializable{
 
     @ManagedProperty(value = "#{loginBean}")
     private LoginBean loginBean;
     private String username;
     private String pass;
+    
     public LoginFormBean() {
     }
 
     public String searchUser(){
+        System.out.println("FormBean");
         return loginBean.searchUser(username, pass);
     }   
     

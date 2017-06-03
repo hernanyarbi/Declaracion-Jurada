@@ -6,6 +6,7 @@
 package aplicacion.beans.forms;
 
 import aplicacion.beans.RegisterBean;
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -16,10 +17,11 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
-public class RegisterFormBean {
+public class RegisterFormBean implements Serializable{
     
     @ManagedProperty(value = "#{registerBean}")
     private RegisterBean registerBean;
+    
     public RegisterFormBean() {
     }
 

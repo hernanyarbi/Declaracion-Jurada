@@ -36,14 +36,13 @@
                           header="Nuevo Usuario">
                     <h:panelGrid columns="1">
                         <p:outputLabel value="Nombre De Usuario Y Contraseña"/>
-                        <p:panel id="user"
-                                 style="margin-top:  0%">
+                        <p:panel id="user">
                             <h:panelGrid columns="2">
                                 <p:outputLabel value="Username"/>
-                                <p:inputText value="#{registerFormBean.registerBean.user.name}"
+                                <p:inputText value="#{registerFormBean.registerBean.user.username}"
                                              required="true"/>
                                 <p:outputLabel value="Password"/>
-                                <p:password value="#{registerFormBean.registerBean.user.name}"
+                                <p:password value="#{registerFormBean.registerBean.user.password}"
                                             required="true"/>
                             </h:panelGrid>
                         </p:panel>
@@ -59,14 +58,16 @@
                                 <p:outputLabel value="Sexo"/>
                                 <p:selectOneMenu value="#{registerFormBean.registerBean.user.sex}">
                                     <f:selectItem itemLabel="Femenino"
-                                                  itemValue="true"/>
+                                                  itemValue="Femenino"/>
                                     <f:selectItem itemLabel="Masculino" 
-                                                  itemValue="false"/>
+                                                  itemValue="Masculino"/>
                                 </p:selectOneMenu>
                                 <p:outputLabel value="Telefono"/>
                                 <p:inputText value="#{registerFormBean.registerBean.user.tel}"/>
                             </h:panelGrid>
                         </p:panel>
+                        <p:commandButton value="Aceptar"
+                                         actionListener="#{registerFormBean.add()}"/>
                     </h:panelGrid>
                 </p:dialog>
             </h:form>

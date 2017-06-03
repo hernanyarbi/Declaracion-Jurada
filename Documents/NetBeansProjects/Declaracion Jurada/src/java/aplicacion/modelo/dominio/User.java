@@ -16,7 +16,7 @@ public class User implements Serializable{
     private String password;
     private String name;
     private String lastname;
-    private boolean sex;
+    private String sex;
     private int tel;
 
     
@@ -24,7 +24,7 @@ public class User implements Serializable{
     
     }
 
-    public User(String username, String password, String name, String lastname, boolean sex, int dni, int tel) {
+    public User(String username, String password, String name, String lastname, String sex, int dni, int tel) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -89,20 +89,6 @@ public class User implements Serializable{
         this.lastname = lastname;
     }
 
-     /**
-     * @return the sex
-     */
-    public boolean isSex() {
-        return sex;
-    }
-
-    /**
-     * @param sex the sex to set
-     */
-    public void setSex(boolean sex) {
-        this.sex = sex;
-    }
-
     /**
      * @return the tel
      */
@@ -115,6 +101,20 @@ public class User implements Serializable{
      */
     public void setTel(int tel) {
         this.tel = tel;
+    }
+
+    /**
+     * @return the sex
+     */
+    public String getSex() {
+        return sex;
+    }
+
+    /**
+     * @param sex the sex to set
+     */
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
    

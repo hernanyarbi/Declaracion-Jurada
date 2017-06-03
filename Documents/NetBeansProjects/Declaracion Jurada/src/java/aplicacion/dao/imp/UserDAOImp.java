@@ -8,12 +8,13 @@ package aplicacion.dao.imp;
 import aplicacion.dap.UserDAO;
 import aplicacion.modelo.dominio.User;
 import aplicacion.modelo.source.UserDataSource;
+import java.io.Serializable;
 
 /**
  *
  * @author hernan-PC
  */
-public class UserDAOImp implements UserDAO{
+public class UserDAOImp implements UserDAO, Serializable{
 
     @Override
     public void add(User user) {

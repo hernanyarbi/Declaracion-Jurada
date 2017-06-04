@@ -11,7 +11,11 @@
         <ui:composition template="./../template/maquta1.xhtml">
 
             <ui:define name="top">
-                top
+
+                <p:outputLabel value="DECLARACION JURADA"/>
+                <p:outputLabel value="De los cargos y actividades que desempeña el causante"
+                               style="margin-left: 69%"/>
+
             </ui:define>
 
             <ui:define name="content">
@@ -141,6 +145,39 @@
                                         </h:panelGrid>
                                     </h:panelGrid>
                                 </p:panelGrid>
+                            </p:tab>
+                            <p:tab title="4">
+                                <h:panelGrid columns="1"
+                                             style="margin: auto">
+                                    <h:panelGrid columns="3">
+                                        <h:panelGrid columns="1">
+                                            <p:outputLabel value="Legajo"/>
+                                            <p:panel>
+                                                <p:outputLabel value="eh12346"/>
+                                            </p:panel>
+                                        </h:panelGrid>
+                                        <h:panelGrid columns="1">
+                                            <h:panelGrid columns="3">
+                                                <p:outputLabel/>
+                                                <p:outputLabel value="Soltero/a"/>
+                                                <p:outputLabel value="Casada"/>
+                                                <p:outputLabel value="Apellidos"/>
+                                                <p:inputText/>
+                                                <p:inputText/>
+                                            </h:panelGrid>
+                                            <h:panelGrid columns="2">
+                                                <p:outputLabel value="Nombres"/>
+                                                <p:inputText style="width: 350px"/>
+                                            </h:panelGrid>
+                                        </h:panelGrid>
+                                        <h:panelGrid columns="2">
+                                            <p:outputLabel value="Fecha de Naciomineto"/>
+                                            <p:inputText style="width: 350px"/>
+                                            <p:outputLabel value="CUIT"/>
+                                            <p:inputText style="width: 350px"/>
+                                        </h:panelGrid>
+                                    </h:panelGrid>
+                                </h:panelGrid>
                             </p:tab>
                         </p:tabView>
                     </h:form>

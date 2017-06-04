@@ -7,7 +7,7 @@ package aplicacion.modelo.dominio;
 
 /**
  *
- * @author Trabajo Y Estudio
+ * @author hernan-PC
  */
 public class Funcion {
     

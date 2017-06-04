@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author Trabajo Y Estudio
+ * @author hernan-PC
  */
 public class CargoDeclarado implements Serializable{
     

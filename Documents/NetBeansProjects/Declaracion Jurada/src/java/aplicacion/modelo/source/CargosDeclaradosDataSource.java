@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author hernan
  */
-public class CargoDeclaracionDataSource implements Serializable{
+public class CargosDeclaradosDataSource implements Serializable{
     
     private static List<CargoDeclarado> cargos = new ArrayList<>();
     

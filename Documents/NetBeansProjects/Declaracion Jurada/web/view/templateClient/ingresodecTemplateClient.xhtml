@@ -70,7 +70,7 @@
                                             </p:selectOneMenu>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
-                                            <p:outputLabel value="Esta Civil: "/>
+                                            <p:outputLabel value="Estado Civil: "/>
                                             <p:selectOneMenu>
                                                 <f:selectItem itemLabel="Soltero/a"
                                                               itemValue="Soltero/a"/>
@@ -147,13 +147,13 @@
                                 </p:panelGrid>
                             </p:tab>
                             <p:tab title="4">
-                                <h:panelGrid columns="1"
+                                <p:panelGrid columns="1"
                                              style="margin: auto">
                                     <h:panelGrid columns="3">
                                         <h:panelGrid columns="1">
                                             <p:outputLabel value="Legajo"/>
                                             <p:panel>
-                                                <p:outputLabel value="eh12346"/>
+                                                <p:outputLabel value="{Numero de legajo}"/>
                                             </p:panel>
                                         </h:panelGrid>
                                         <h:panelGrid columns="1">
@@ -161,28 +161,100 @@
                                                 <p:outputLabel/>
                                                 <p:outputLabel value="Soltero/a"/>
                                                 <p:outputLabel value="Casada"/>
-                                                <p:outputLabel value="Apellidos"/>
-                                                <p:inputText/>
-                                                <p:inputText/>
+                                                <p:outputLabel value="Apellidos: "/>
+                                                <p:inputText disabled="true"/>
+                                                <p:inputText disabled="true"/>
                                             </h:panelGrid>
                                             <h:panelGrid columns="2">
-                                                <p:outputLabel value="Nombres"/>
-                                                <p:inputText style="width: 350px"/>
+                                                <p:outputLabel value="Nombres: "/>
+                                                <p:inputText style="width: 350px"
+                                                             disabled="true"/>
                                             </h:panelGrid>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
-                                            <p:outputLabel value="Fecha de Naciomineto"/>
-                                            <p:inputText style="width: 350px"/>
-                                            <p:outputLabel value="CUIT"/>
-                                            <p:inputText style="width: 350px"/>
+                                            <p:outputLabel value="Fecha de Naciomineto: "/>
+                                            <p:inputText style="width: 350px"
+                                                         disabled="true"/>
+                                            <p:panel>
+                                                <p:outputLabel value="{Cuil o cuit}"/>
+                                            </p:panel>
+                                            <p:inputText style="width: 350px"
+                                                         disabled="true"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
-                                    <h:panelGrid columns="2">
-                                        <p:outputLabel value="DATOS RELACIONADOS CON LAS FUNCIONES, CARGOS Y OCUPACIONES"/>
-                                        <p:outputLabel value="Declaracion Jurada Nº"/>
+                                    <p:outputLabel value="DATOS RELACIONADOS CON LAS FUNCIONES, CARGOS Y OCUPACIONES"/>
+                                    <p:outputLabel value="Declaracion Jurada Nº"
+                                                   style="margin-left:75%"/>
+                                    <h:panelGrid columns="2"
+                                                 style="margin: auto">
+                                        <p:panelGrid columns="2">
+                                            <h2>4</h2>
+                                            <h:panelGrid columns="1">
+                                                <p:outputLabel value="Dependencia, oficina, facultad"/>
+                                                <p:selectOneMenu>
+                                                    <f:selectItem itemLabel="Rectorado"
+                                                                  itemValue="Rectorado"/>
+                                                    <f:selectItem itemLabel="Facultad de Ingenieria"
+                                                                  itemValue="Facultad de Ingenieria"/>
+                                                    <f:selectItem itemLabel="Facultad de Ciensias Economicas"
+                                                                  itemValue="Facultad de Ciensias Economicas"/>
+                                                    <f:selectItem itemLabel="Facultad de Ciensias Agrarias"
+                                                                  itemValue="Facultad de Ciensias Agrarias"/>
+                                                    <f:selectItem itemLabel="Facultad de Humanidades y Ciencias Sociales"
+                                                                  itemValue="Facultad de Humanidades y Ciencias Sociales"/>
+                                                    <f:selectItem itemLabel="INTEMI"
+                                                                  itemValue="INTEMI"/>
+                                                    <f:selectItem itemLabel="Instituto de Geologia y Mineria"
+                                                                  itemValue="Instituto de Geologia y Mineria"/>
+                                                    <f:selectItem itemLabel="Instituto de Biologia de las Alturas"
+                                                                  itemValue="Instituto de Biologia de las Alturas"/>
+                                                    <f:selectItem itemLabel="Estacion de Fauna Sivestre"
+                                                                  itemValue="Estacion de Fauna Sivestre"/>
+                                                    <f:selectItem itemLabel="Escuela de Minas"
+                                                                  itemValue="Escuela de Minas"/>
+                                                </p:selectOneMenu>
+                                                <h:panelGrid columns="2">
+                                                    <p:outputLabel value="Imputacion Propuesta: "/>
+                                                    <p:selectOneMenu>
+                                                        <f:selectItem itemLabel="Planta"
+                                                                      itemValue="Planta"/>
+                                                        <f:selectItem itemLabel="Contratado"
+                                                                      itemValue="Contratado"/>
+                                                        <f:selectItem itemLabel="Ordinario"
+                                                                      itemValue="Ordinario"/>
+                                                        <f:selectItem itemLabel="Interino"
+                                                                      itemValue="Interino"/>
+                                                        <f:selectItem itemLabel="Suplente"
+                                                                      itemValue="Suplnete"/>
+                                                        <f:selectItem itemLabel="Ad Honorem"
+                                                                      itemValue="Ad Honorem"/>
+                                                    </p:selectOneMenu>
+                                                </h:panelGrid>
+                                                <p:outputLabel value="Lugar donde desempeña funciones"/>
+                                                <h:panelGrid columns="2">
+                                                    <p:outputLabel value="Provincia: "/>
+                                                    <p:inputText/>
+                                                    <p:outputLabel value="Localdad: "/>
+                                                    <p:inputText/>
+                                                </h:panelGrid>
+                                                <h:panelGrid columns="4">
+                                                    <p:outputLabel value="Calle: "/>
+                                                    <p:inputText/>
+                                                    <p:outputLabel value="N°: "/>
+                                                    <p:inputText/>
+                                                </h:panelGrid>
+                                                <h:panelGrid columns="2">
+                                                    <p:outputLabel value="Funcion que desempeña"/>
+                                                    <p:outputLabel value="Ingreso"/>
+                                                    <h:panelGrid columns="2">
+                                                        <p:commandButton/>
+                                                        <p:outputLabel value="Ingreso"/>
+                                                    </h:panelGrid>
+                                                </h:panelGrid>
+                                            </h:panelGrid>
+                                        </p:panelGrid>
                                     </h:panelGrid>
-                                    
-                                </h:panelGrid>
+                                </p:panelGrid>
                             </p:tab>
                         </p:tabView>
                     </h:form>

@@ -5,6 +5,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
     <body>
         <ui:composition template="./../template/maquta1.xhtml">
 
@@ -17,9 +18,12 @@
             </ui:define>
 
             <ui:define name="content">
+
                 <p:panel >
-                    <h:form>
-                        <p:tabView>
+                    <h:form id="frmAgente">
+                        <p:growl id="msg"
+                                 showDetail="true"/>
+                        <p:tabView id="tab">
                             <p:tab title="3-2-1">
                                 <p:outputLabel value="Declaracion Jurada..."
                                                style="margin-left: 85%"/>
@@ -28,7 +32,7 @@
                                     <h2>1</h2>
                                     <h:panelGrid columns="4">
                                         <p:outputLabel value="Legajo N°: "/>
-                                        <p:inputText class="dis"
+                                        <p:inputText styleClass="dis"
                                                      required="true"
                                                      value="#{agenteFormBean.agenteBean.agente.legajo}"/>
                                         <p:outputLabel/>
@@ -200,10 +204,11 @@
                                                      id="btn_modif"/>
                                     <p:commandButton value="Grabar Datos Ingresados"
                                                      id="btn_grabar"
-                                                     actionListener="#{agenteFormBean.add()}"/>
+                                                     actionListener="#{agenteFormBean.add()}"
+                                                     update=":frmAgente"/>
                                 </h:panelGrid>
                             </p:tab>
-                            <p:tab title=" 4 " disabled="true">
+                            <p:tab title=" 4 " >
                                 <p:panelGrid columns="1"
                                              style="margin: auto">
                                     <h:panelGrid columns="3">
@@ -323,6 +328,5 @@
             </ui:define>
 
         </ui:composition>
-
     </body>
 </html>

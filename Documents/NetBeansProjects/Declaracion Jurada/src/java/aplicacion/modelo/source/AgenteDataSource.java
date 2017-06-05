@@ -19,10 +19,13 @@ public class AgenteDataSource implements Serializable {
     private static List<Agente> agentes = new ArrayList<>();
     
     public static void add(Agente agente){
+        System.out.println("agente0");
         if(agentes != null){
             agentes = new ArrayList<>();
         }
         agentes.add(agente);
+        System.out.println("agente");
+        System.out.println("Nombre:"+agentes.get(0).getNombres().toString());
     }
     
     public static Agente searchAgente(int legajo){

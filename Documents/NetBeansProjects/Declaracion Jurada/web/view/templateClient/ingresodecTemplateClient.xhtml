@@ -5,9 +5,11 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-
+    <head>
+        <script type="text/javascript" src="/resources/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="/resources/js/ingresoDesc.js"></script>
+    </head>
     <body>
-
         <ui:composition template="./../template/maquta1.xhtml">
 
             <ui:define name="top">
@@ -24,21 +26,19 @@
                         <p:tabView>
                             <p:tab title="3-2-1">
                                 <p:outputLabel value="Declaracion Jurada..."
-                                               style="margin-left: 75%"/>
+                                               style="margin-left: 85%"/>
                                 <p:panelGrid columns="3"
                                              style="margin: auto">
-
-
                                     <h2>1</h2>
                                     <h:panelGrid columns="4">
                                         <p:outputLabel value="Legajo N°: "/>
-                                        <p:inputText/>
+                                        <p:inputText class="dis"/>
                                         <p:outputLabel/>
                                         <p:outputLabel/>
                                         <p:outputLabel value="Documento N°:  "/>
-                                        <p:inputText/>
+                                        <p:inputText class="dis"/>
                                         <p:outputLabel value="Tipo: "/>
-                                        <p:selectOneMenu>
+                                        <p:selectOneMenu class="dis">
                                             <f:selectItem itemLabel="L.C."
                                                           itemValue="L.C"/>
                                             <f:selectItem itemLabel="L.E."
@@ -47,14 +47,14 @@
                                                           itemValue="D.N.I"/>
                                         </p:selectOneMenu>
                                         <p:outputLabel value="Matricula N°: "/>
-                                        <p:inputText/>
+                                        <p:inputText class="dis"/>
                                         <p:outputLabel value="D.M.: "/>
-                                        <p:inputText/>
+                                        <p:inputText class="dis"/>
                                     </h:panelGrid>
                                     <h:panelGrid columns="3">
                                         <p:outputLabel value="Fecah de Nacimiento: "/>
-                                        <p:calendar/>
-                                        <p:selectOneMenu>
+                                        <p:calendar class="dis"/>
+                                        <p:selectOneMenu class="dis">
                                             <f:selectItem itemLabel="CUIL"
                                                           itemValue="CUIL"/>
                                             <f:selectItem itemLabel="CUIT"
@@ -62,7 +62,7 @@
                                         </p:selectOneMenu>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Sexo: "/>
-                                            <p:selectOneMenu>
+                                            <p:selectOneMenu class="dis">
                                                 <f:selectItem itemLabel="F"
                                                               itemValue="F"/>
                                                 <f:selectItem itemLabel="M"
@@ -71,7 +71,7 @@
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Estado Civil: "/>
-                                            <p:selectOneMenu>
+                                            <p:selectOneMenu class="dis">
                                                 <f:selectItem itemLabel="Soltero/a"
                                                               itemValue="Soltero/a"/>
                                                 <f:selectItem itemLabel="Casado/a"
@@ -85,9 +85,11 @@
                                             </p:selectOneMenu>
                                         </h:panelGrid>
                                         <h:panelGrid columns="3">
-                                            <p:inputText style="width: 20px"/>
-                                            <p:inputText/>
-                                            <p:inputText style="width: 10px"/>
+                                            <p:inputText style="width: 20px"
+                                                         class="dis"/>
+                                            <p:inputText class="dis"/>
+                                            <p:inputText style="width: 10px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
 
@@ -99,19 +101,22 @@
                                             <p:outputLabel value="Soltero/a"/>
                                             <p:outputLabel value="Casada"/>
                                             <p:outputLabel value="Apellidos: "/>
-                                            <p:inputText />
-                                            <p:inputText/>
+                                            <p:inputText class="dis"/>
+                                            <p:inputText class="dis"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Nombres: "/>
-                                            <p:inputText style="width: 450px"/>
+                                            <p:inputText style="width: 450px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                     <h:panelGrid columns="2">
                                         <p:outputLabel value="Ocupacion: "/>
-                                        <p:inputText style="width: 450px"/>
+                                        <p:inputText style="width: 450px"
+                                                     class="dis"/>
                                         <p:outputLabel value="Titulo: "/>
-                                        <p:inputText style="width: 450px"/>
+                                        <p:inputText style="width: 450px"
+                                                     class="dis"/>
                                     </h:panelGrid>
 
 
@@ -119,34 +124,52 @@
                                     <h:panelGrid columns="1">
                                         <h:panelGrid columns="4">
                                             <p:outputLabel value="Provincia: "/>
-                                            <p:inputText style="width: 360px"/>
+                                            <p:inputText style="width: 360px"
+                                                         class="dis"/>
                                             <p:outputLabel value="C.P.: "/>
-                                            <p:inputText style="width: 35px"/>
+                                            <p:inputText style="width: 35px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Localidad: "/>
-                                            <p:inputText style="width: 450px"/>
+                                            <p:inputText style="width: 450px"
+                                                         class="dis"/>
                                             <p:outputLabel value="Barrio: "/>
-                                            <p:inputText style="width: 450px"/>
+                                            <p:inputText style="width: 450px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                     <h:panelGrid columns="1">
                                         <h:panelGrid columns="4">
                                             <p:outputLabel value="Calle: "/>
-                                            <p:inputText style="width: 400px;"/>
+                                            <p:inputText style="width: 400px;"
+                                                         class="dis"/>
                                             <p:outputLabel value="Nº: "/>
-                                            <p:inputText style="width: 35px"/>
+                                            <p:inputText style="width: 35px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Telefono: "/>
-                                            <p:inputText style="width: 450px"/>
+                                            <p:inputText style="width: 450px"
+                                                         class="dis"/>
                                             <p:outputLabel value="e-mail: "/>
-                                            <p:inputText style="width: 450px"/>
+                                            <p:inputText style="width: 450px"
+                                                         class="dis"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                 </p:panelGrid>
+                                <h:panelGrid columns="3"
+                                             style="margin-left: 59%">
+                                    <p:commandLink value="Nuevo Formulario(Limpiar)"
+                                                   class="dis"/>
+                                    <p:commandButton value="Modificar Datos"
+                                                     disabled="true"
+                                                     id="btn_modif"/>
+                                    <p:commandButton value="Grabar Datos Ingresados"
+                                                     id="btn_grabar"/>
+                                </h:panelGrid>
                             </p:tab>
-                            <p:tab title="4">
+                            <p:tab title=" 4 " disabled="true">
                                 <p:panelGrid columns="1"
                                              style="margin: auto">
                                     <h:panelGrid columns="3">
@@ -188,7 +211,7 @@
                                     <h:panelGrid columns="2"
                                                  style="margin: auto">
                                         <p:panelGrid columns="2">
-                                            <h2> 4 </h2>
+                                            <h2>4</h2>
                                             <h:panelGrid columns="1">
                                                 <p:outputLabel value="Dependencia, oficina, facultad"/>
                                                 <p:selectOneMenu>

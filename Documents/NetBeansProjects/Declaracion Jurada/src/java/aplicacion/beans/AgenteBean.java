@@ -32,7 +32,7 @@ public class AgenteBean {
         agenteDao = new AgenteDAOImp();
     }
     
-    public void add(Agente agente){
+    public void add(){
         agenteDao.add(agente);
     }
     

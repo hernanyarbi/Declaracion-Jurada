@@ -5,10 +5,6 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <head>
-        <script type="text/javascript" src="/resources/js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="/resources/js/ingresoDesc.js"></script>
-    </head>
     <body>
         <ui:composition template="./../template/maquta1.xhtml">
 
@@ -32,11 +28,15 @@
                                     <h2>1</h2>
                                     <h:panelGrid columns="4">
                                         <p:outputLabel value="Legajo N°: "/>
-                                        <p:inputText class="dis"/>
+                                        <p:inputText class="dis"
+                                                     required="true"
+                                                     value="#{agenteFormBean.agenteBean.agente.legajo}"/>
                                         <p:outputLabel/>
                                         <p:outputLabel/>
                                         <p:outputLabel value="Documento N°:  "/>
-                                        <p:inputText class="dis"/>
+                                        <p:inputText class="dis"
+                                                     required="true"
+                                                     value="#{agenteFormBean.agenteBean.agente.tipoNumDoc}"/>
                                         <p:outputLabel value="Tipo: "/>
                                         <p:selectOneMenu class="dis">
                                             <f:selectItem itemLabel="L.C."
@@ -47,13 +47,17 @@
                                                           itemValue="D.N.I"/>
                                         </p:selectOneMenu>
                                         <p:outputLabel value="Matricula N°: "/>
-                                        <p:inputText class="dis"/>
+                                        <p:inputText class="dis"
+                                                     value="#{agenteFormBean.agenteBean.agente.numMatricula}"/>
                                         <p:outputLabel value="D.M.: "/>
-                                        <p:inputText class="dis"/>
+                                        <p:inputText class="dis"
+                                                     value="#{agenteFormBean.agenteBean.agente.dm}"/>
                                     </h:panelGrid>
                                     <h:panelGrid columns="3">
                                         <p:outputLabel value="Fecah de Nacimiento: "/>
-                                        <p:calendar class="dis"/>
+                                        <p:calendar class="dis"
+                                                    required="true"
+                                                    value="#{agenteFormBean.agenteBean.agente.fhNac}"/>
                                         <p:selectOneMenu class="dis">
                                             <f:selectItem itemLabel="CUIL"
                                                           itemValue="CUIL"/>
@@ -62,7 +66,8 @@
                                         </p:selectOneMenu>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Sexo: "/>
-                                            <p:selectOneMenu class="dis">
+                                            <p:selectOneMenu class="dis"
+                                                             value="#{agenteFormBean.agenteBean.agente.sexo}">
                                                 <f:selectItem itemLabel="F"
                                                               itemValue="F"/>
                                                 <f:selectItem itemLabel="M"
@@ -71,7 +76,8 @@
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Estado Civil: "/>
-                                            <p:selectOneMenu class="dis">
+                                            <p:selectOneMenu class="dis"
+                                                             value="#{agenteFormBean.agenteBean.agente.estCivil}">
                                                 <f:selectItem itemLabel="Soltero/a"
                                                               itemValue="Soltero/a"/>
                                                 <f:selectItem itemLabel="Casado/a"
@@ -86,10 +92,14 @@
                                         </h:panelGrid>
                                         <h:panelGrid columns="3">
                                             <p:inputText style="width: 20px"
-                                                         class="dis"/>
-                                            <p:inputText class="dis"/>
+                                                         class="dis"
+                                                         required="true"/>
+                                            <p:inputText class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.cuitCuil}"/>
                                             <p:inputText style="width: 10px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
 
@@ -101,22 +111,31 @@
                                             <p:outputLabel value="Soltero/a"/>
                                             <p:outputLabel value="Casada"/>
                                             <p:outputLabel value="Apellidos: "/>
-                                            <p:inputText class="dis"/>
-                                            <p:inputText class="dis"/>
+                                            <p:inputText class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.apellido}"/>
+                                            <p:inputText class="dis"
+                                                         value="#{agenteFormBean.agenteBean.agente.apellidoCasada}"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Nombres: "/>
                                             <p:inputText style="width: 450px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.nombres}"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                     <h:panelGrid columns="2">
                                         <p:outputLabel value="Ocupacion: "/>
                                         <p:inputText style="width: 450px"
-                                                     class="dis"/>
+                                                     class="dis"
+                                                     required="true"
+                                                     value="#{agenteFormBean.agenteBean.agente.ocupacion}"/>
                                         <p:outputLabel value="Titulo: "/>
                                         <p:inputText style="width: 450px"
-                                                     class="dis"/>
+                                                     class="dis"
+                                                     required="true"
+                                                     value="#{agenteFormBean.agenteBean.agente.titulo}"/>
                                     </h:panelGrid>
 
 
@@ -125,36 +144,50 @@
                                         <h:panelGrid columns="4">
                                             <p:outputLabel value="Provincia: "/>
                                             <p:inputText style="width: 360px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.provincia}"/>
                                             <p:outputLabel value="C.P.: "/>
                                             <p:inputText style="width: 35px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.cp}"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Localidad: "/>
                                             <p:inputText style="width: 450px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.localidad}"/>
                                             <p:outputLabel value="Barrio: "/>
                                             <p:inputText style="width: 450px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.barrio}"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                     <h:panelGrid columns="1">
                                         <h:panelGrid columns="4">
                                             <p:outputLabel value="Calle: "/>
                                             <p:inputText style="width: 400px;"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.calle}"/>
                                             <p:outputLabel value="Nº: "/>
                                             <p:inputText style="width: 35px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         required="true"
+                                                         value="#{agenteFormBean.agenteBean.agente.num}"/>
                                         </h:panelGrid>
                                         <h:panelGrid columns="2">
                                             <p:outputLabel value="Telefono: "/>
                                             <p:inputText style="width: 450px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         value="#{agenteFormBean.agenteBean.agente.telefono}"/>
                                             <p:outputLabel value="e-mail: "/>
                                             <p:inputText style="width: 450px"
-                                                         class="dis"/>
+                                                         class="dis"
+                                                         value="#{agenteFormBean.agenteBean.agente.email}"/>
                                         </h:panelGrid>
                                     </h:panelGrid>
                                 </p:panelGrid>
@@ -166,7 +199,8 @@
                                                      disabled="true"
                                                      id="btn_modif"/>
                                     <p:commandButton value="Grabar Datos Ingresados"
-                                                     id="btn_grabar"/>
+                                                     id="btn_grabar"
+                                                     actionListener="#{agenteFormBean.add()}"/>
                                 </h:panelGrid>
                             </p:tab>
                             <p:tab title=" 4 " disabled="true">

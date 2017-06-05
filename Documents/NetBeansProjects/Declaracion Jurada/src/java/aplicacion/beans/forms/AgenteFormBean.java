@@ -20,26 +20,12 @@ public class AgenteFormBean {
     
     @ManagedProperty(value = "#{agenteBean}")
     private AgenteBean agenteBean;
-    private boolean disabledForm;
-    private boolean disabledButtomm;
     
     public AgenteFormBean() {
     }
 
     public void add(){
-        //agenteBean.add();
-        disabledForm = disabled(false);
-        disabledButtomm = disabled(true);
-    }
-    
-    
-    public boolean disabled(boolean dis){
-        if(dis){
-            dis = false;
-        }else{
-            dis =true;
-        }
-        return dis;
+        agenteBean.add();
     }
     /**
      * @return the agenteBean
@@ -55,32 +41,4 @@ public class AgenteFormBean {
         this.agenteBean = agenteBean;
     }
 
-    /**
-     * @return the disabledForm
-     */
-    public boolean isDisabledForm() {
-        return disabledForm;
-    }
-
-    /**
-     * @param disabledForm the disabledForm to set
-     */
-    public void setDisabledForm(boolean disabledForm) {
-        this.disabledForm = disabledForm;
-    }
-
-    /**
-     * @return the disabledButtomm
-     */
-    public boolean isDisabledButtomm() {
-        return disabledButtomm;
-    }
-
-    /**
-     * @param disabledButtomm the disabledButtomm to set
-     */
-    public void setDisabledButtomm(boolean disabledButtomm) {
-        this.disabledButtomm = disabledButtomm;
-    }
-    
 }

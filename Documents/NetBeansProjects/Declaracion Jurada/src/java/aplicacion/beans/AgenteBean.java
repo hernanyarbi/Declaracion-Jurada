@@ -20,23 +20,51 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class AgenteBean {
 
-    Agente agente;
-    AgenteDAO agenteDao;
+    private Agente agente;
+    private AgenteDAO agenteDao;
     
     public AgenteBean() {
     }
     
     @PostConstruct
     public void init(){
-        agente = new Agente();
-        agenteDao = new AgenteDAOImp();
+        setAgente(new Agente());
+        setAgenteDao(new AgenteDAOImp());
     }
     
     public void add(){
-        agenteDao.add(agente);
+        getAgenteDao().add(getAgente());
     }
     
     public Agente searchAgente(int legajo){
-        return agenteDao.searchAgente(legajo);
+        return getAgenteDao().searchAgente(legajo);
+    }
+
+    /**
+     * @return the agente
+     */
+    public Agente getAgente() {
+        return agente;
+    }
+
+    /**
+     * @param agente the agente to set
+     */
+    public void setAgente(Agente agente) {
+        this.agente = agente;
+    }
+
+    /**
+     * @return the agenteDao
+     */
+    public AgenteDAO getAgenteDao() {
+        return agenteDao;
+    }
+
+    /**
+     * @param agenteDao the agenteDao to set
+     */
+    public void setAgenteDao(AgenteDAO agenteDao) {
+        this.agenteDao = agenteDao;
     }
 }

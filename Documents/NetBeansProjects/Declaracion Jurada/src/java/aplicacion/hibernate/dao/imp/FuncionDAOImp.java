@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.dao.imp;
+package aplicacion.hibernate.dao.imp;
 
-import aplicacion.dap.FuncionDAO;
+import aplicacion.hibernate.dao.FuncionDAO;
 import aplicacion.modelo.dominio.Funcion;
 import aplicacion.modelo.source.FuncionesDataSource;
 import java.io.Serializable;

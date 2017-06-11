@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.dap;
+package aplicacion.hibernate.dao;
 
 import aplicacion.modelo.dominio.User;
 
@@ -12,11 +12,19 @@ import aplicacion.modelo.dominio.User;
  * @author hernan-PC
  */
 public interface UserDAO {
+    
     /**
      * 
      * @param user 
      */
     void add(User user);
+    
+    /**
+     * 
+     * @param user 
+     */
+    void upDate(User user);
+    
     /**
      * 
      * @param username

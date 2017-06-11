@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.dao.imp;
+package aplicacion.hibernate.dao.imp;
 
-import aplicacion.dap.HorarioDAO;
+import aplicacion.hibernate.dao.HorarioDAO;
 import aplicacion.modelo.dominio.Horario;
 import aplicacion.modelo.source.HorariosDataSource;
 import java.io.Serializable;

@@ -5,10 +5,13 @@
  */
 package aplicacion.modelo.source;
 
+import aplicacion.hibernate.config.HibernateUtil;
 import aplicacion.modelo.dominio.User;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import javax.faces.context.FacesContext;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -16,29 +19,33 @@ import java.util.List;
  */
 public class UserDataSource implements Serializable {
 
-    private static List<User> users = new ArrayList<User>();
-
     public static void add(User user) {
-        if (users == null) {
-            users = new ArrayList<>();
-        }
-        users.add(user);
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(user);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public static void upDate(User user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(user);
+        session.getTransaction().commit();
+        session.close();
     }
 
     public static User searchUser(String username, String pass) {
         User user = null;
-        if (users != null) {
-            users.add(new User("ejemplo1", "123456", "Ejemplo1", "Ejemplo.1", "Femenino", 0, 0));
-            users.add(new User("ejemplo2", "123789", "Ejemplo2", "Ejemplo.2", "Femenino", 0, 0));
-            users.add(new User("ejemplo3", "456789", "Ejemplo3", "Ejemplo.3", "Masculino", 0, 0));
-            for (User user1 : users) {
-                if (user1.getUsername().equals(username) && user1.getPassword().equals(pass)) {
-                    user = user1;
-                    break;
-                }
-
-            }
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.like("username", username))
+                .add(Restrictions.like("password", pass));
+        if (!criteria.list().isEmpty()) {
+            user = new User();
+            user = (User) criteria.list().get(0);
         }
+        session.close();
         return user;
     }
 

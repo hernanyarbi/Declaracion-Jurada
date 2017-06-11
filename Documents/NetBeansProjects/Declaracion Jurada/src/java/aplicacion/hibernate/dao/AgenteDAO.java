@@ -3,26 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.dap;
+package aplicacion.hibernate.dao;
 
-import aplicacion.modelo.dominio.CargoDeclarado;
+import aplicacion.modelo.dominio.Agente;
 
 /**
  *
  * @author hernan
  */
-public interface CargoDeclaracdoDAO {
-    
+public interface AgenteDAO{
     /**
      * 
-     * @param cargo 
+     * @param agente 
      */
-    void add(CargoDeclarado cargo);
+    void add(Agente agente);
     
     /**
      * 
-     * @param codCargo
+     * @param codAgente
      * @return 
      */
-    CargoDeclarado searchCargo(int codCargo);
+    Agente searchAgente(int codAgente);
 }

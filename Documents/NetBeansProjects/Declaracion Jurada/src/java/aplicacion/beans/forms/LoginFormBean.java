@@ -6,10 +6,13 @@
 package aplicacion.beans.forms;
 
 import aplicacion.beans.LoginBean;
+import aplicacion.modelo.dominio.User;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -23,14 +26,20 @@ public class LoginFormBean implements Serializable{
     private LoginBean loginBean;
     private String username;
     private String pass;
+    private User user;
     
     public LoginFormBean() {
     }
 
+    @PostConstruct
+    public void init(){
+        user = loginBean.sessionUser();
+    }
+    
     public String searchUser(){
-        System.out.println("FormBean");
         return loginBean.searchUser(username, pass);
     }   
+    
     
     /**
      * @return the username
@@ -72,6 +81,20 @@ public class LoginFormBean implements Serializable{
      */
     public void setLoginBean(LoginBean loginBean) {
         this.loginBean = loginBean;
+    }
+
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
     
 }

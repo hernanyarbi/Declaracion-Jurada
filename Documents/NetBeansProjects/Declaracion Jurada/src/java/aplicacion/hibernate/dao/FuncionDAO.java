@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.dap;
+package aplicacion.hibernate.dao;
 
 import aplicacion.modelo.dominio.Funcion;
 

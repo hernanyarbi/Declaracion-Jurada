@@ -5,8 +5,8 @@
  */
 package aplicacion.beans;
 
-import aplicacion.dao.imp.AgenteDAOImp;
-import aplicacion.dap.AgenteDAO;
+import aplicacion.hibernate.dao.imp.AgenteDAOImp;
+import aplicacion.hibernate.dao.AgenteDAO;
 import aplicacion.modelo.dominio.Agente;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;

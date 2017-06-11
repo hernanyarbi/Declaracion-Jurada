@@ -5,8 +5,8 @@
  */
 package aplicacion.beans;
 
-import aplicacion.dao.imp.UserDAOImp;
-import aplicacion.dap.UserDAO;
+import aplicacion.hibernate.dao.imp.UserDAOImp;
+import aplicacion.hibernate.dao.UserDAO;
 import aplicacion.modelo.dominio.User;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;

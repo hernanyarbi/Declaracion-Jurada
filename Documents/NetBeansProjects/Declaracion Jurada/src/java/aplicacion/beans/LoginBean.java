@@ -5,8 +5,8 @@
  */
 package aplicacion.beans;
 
-import aplicacion.dao.imp.UserDAOImp;
-import aplicacion.dap.UserDAO;
+import aplicacion.hibernate.dao.imp.UserDAOImp;
+import aplicacion.hibernate.dao.UserDAO;
 import aplicacion.modelo.dominio.User;
 import aplicacion.modelo.source.UserDataSource;
 import java.io.Serializable;
@@ -26,7 +26,6 @@ public class LoginBean implements Serializable {
 
     private User user;
     private UserDAO userDao;
-
     public LoginBean() {
     }
 
@@ -51,6 +50,11 @@ public class LoginBean implements Serializable {
         return word;
     }
 
+    public User sessionUser(){
+        User user2 = (User)FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("user");
+        return user2;
+    }
+    
     /**
      * @return the user
      */

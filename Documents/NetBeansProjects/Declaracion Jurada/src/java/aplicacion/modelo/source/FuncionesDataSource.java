@@ -27,13 +27,7 @@ public class FuncionesDataSource implements Serializable{
     
     public static Funcion searchFuncion(int codFuncion){
         Funcion funcion = null;
-        if(funciones != null){
-            for (Funcion funcion1 : funciones) {
-                if(funcion1.getCodFuncion() == codFuncion){
-                    funcion = funcion1;
-                }
-            }
-        }
+        
         return funcion;
     }
     

@@ -8,6 +8,10 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">hernandy17</property>
     <property name="hibernate.show_sql">true</property>
+    <mapping resource="aplicacion/hibernate/mapeos/CargosDeclarados.hbm.xml"/>
+    <mapping resource="aplicacion/hibernate/mapeos/Agentes.hbm.xml"/>
+    <mapping resource="aplicacion/hibernate/mapeos/Funciones.hbm.xml"/>
+    <mapping resource="aplicacion/hibernate/mapeos/Horarios.hbm.xml"/>
     <mapping resource="aplicacion/hibernate/mapeos/Users.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -27,13 +27,7 @@ public class CargosDeclaradosDataSource implements Serializable{
     
     public static CargoDeclarado searchCargo(int codCargo){
         CargoDeclarado cargo =  null;
-        if(cargos != null){
-            for (CargoDeclarado cargo1 : cargos) {
-                if(cargo1.getCodCargo() == codCargo){
-                    cargo = cargo1;
-                }
-            }
-        }
+        
         return cargo;
     }
 }

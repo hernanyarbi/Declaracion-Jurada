@@ -5,10 +5,12 @@
  */
 package aplicacion.modelo.source;
 
+import aplicacion.hibernate.config.HibernateUtil;
 import aplicacion.modelo.dominio.Agente;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Session;
 
 /**
  *
@@ -19,24 +21,24 @@ public class AgenteDataSource implements Serializable {
     private static List<Agente> agentes = new ArrayList<>();
     
     public static void add(Agente agente){
-        System.out.println("agente0");
-        if(agentes != null){
-            agentes = new ArrayList<>();
-        }
-        agentes.add(agente);
-        System.out.println("agente");
-        System.out.println("Nombre:"+agentes.get(0).getNombres().toString());
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(agente);
+        session.getTransaction().commit();
+        session.close();
+    }
+    
+    public static void upDate(Agente agente) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(agente);
+        session.getTransaction().commit();
+        session.close();
     }
     
     public static Agente searchAgente(int legajo){
         Agente agente = null;
-        if(agentes != null){
-            for (Agente agente1 : agentes) {
-                if (agente1.getLegajo() == legajo) {
-                    agente = agente1;
-                }
-            }
-        }
+        
         return agente;
     }
 

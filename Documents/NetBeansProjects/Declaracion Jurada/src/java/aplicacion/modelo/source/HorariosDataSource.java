@@ -26,14 +26,6 @@ public class HorariosDataSource implements Serializable{
     }
     
     public static Horario searchHorario(int codHorario){
-        Horario horario = null;
-        if(horarios != null){
-            for (Horario horario1 : horarios) {
-                if(horario1.getCodHor() == codHorario){
-                    horario = horario1;
-                }
-            }
-        }
-        return horario;
+      return null;
     }
 }

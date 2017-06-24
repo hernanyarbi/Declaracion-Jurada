@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 10-jun-2017 17:16:51 by Hibernate Tools 4.3.1 -->
+<!-- Generated 14-jun-2017 18:20:35 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-  <class name="aplicacion.modelo.dominio.User" table="users" catalog="ddjj">
+  <class catalog="ddjj" name="aplicacion.modelo.dominio.User" optimistic-lock="version" table="users">
     <id name="username" type="string">
       <column length="25" name="username"/>
       <generator class="assigned"/>
@@ -22,5 +22,11 @@
     <property name="tel" type="string">
       <column length="45" name="tel"/>
     </property>
+    <set fetch="select" inverse="true" lazy="true" name="agente" table="agentes">
+      <key>
+        <column length="25" name="usuario_username" not-null="true"/>
+      </key>
+      <one-to-many class="aplicacion.modelo.dominio.Agente"/>
+    </set>
   </class>
 </hibernate-mapping>

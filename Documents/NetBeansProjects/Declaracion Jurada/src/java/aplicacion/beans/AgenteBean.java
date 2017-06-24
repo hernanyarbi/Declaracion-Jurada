@@ -10,6 +10,7 @@ import aplicacion.hibernate.dao.AgenteDAO;
 import aplicacion.modelo.dominio.Agente;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 /**
@@ -20,8 +21,11 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class AgenteBean {
 
+    @ManagedProperty(value = "#{loginBean}")
+    private LoginBean loginBean;
     private Agente agente;
     private AgenteDAO agenteDao;
+    
     
     public AgenteBean() {
     }
@@ -33,6 +37,7 @@ public class AgenteBean {
     }
     
     public void add(){
+        agente.setUser(loginBean.getUserSession());
         getAgenteDao().add(getAgente());
     }
     
@@ -66,5 +71,19 @@ public class AgenteBean {
      */
     public void setAgenteDao(AgenteDAO agenteDao) {
         this.agenteDao = agenteDao;
+    }
+
+    /**
+     * @return the loginBean
+     */
+    public LoginBean getLoginBean() {
+        return loginBean;
+    }
+
+    /**
+     * @param loginBean the loginBean to set
+     */
+    public void setLoginBean(LoginBean loginBean) {
+        this.loginBean = loginBean;
     }
 }
